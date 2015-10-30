@@ -3,17 +3,17 @@ var State = function(board, turn) {
   this.turn = turn;
 };
 
+
+
 var MCTS_Node = function(State, parent, simulate, get_children) {
   this.State = State;
   this.parent = parent;
   this.simulate = simulate;
   this.get_children = get_children;
-  this.children = get_children(State);
+  this.children = get_children(State, this);
   this.hits = 0;
   this.misses = 0;
   this.total_tries = 0;
-  if (!parent)
-    this.choose_child();
 };
 
 MCTS_Node.prototype.child_potential = function(child) {
@@ -48,7 +48,6 @@ MCTS_Node.prototype.choose_child = function() {
         }
       }
       best_child.choose_child();
-      
     }
   }
 };
