@@ -10,7 +10,6 @@ var MCTS_Node = function(State, parent, simulate, get_children) {
   this.parent = parent;
   this.simulate = simulate;
   this.get_children = get_children;
-  this.children = get_children(State, this);
   this.hits = 0;
   this.misses = 0;
   this.total_tries = 0;
@@ -26,6 +25,8 @@ MCTS_Node.prototype.child_potential = function(child) {
 };
 
 MCTS_Node.prototype.choose_child = function() {
+  if (!this.children)
+    this.children = get_children(State, this);
   if (this.children === 0) { // leaf node
     this.run_simulation();
   }
