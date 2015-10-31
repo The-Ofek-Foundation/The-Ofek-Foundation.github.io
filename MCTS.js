@@ -39,7 +39,7 @@ MCTS_Node.prototype.choose_child = function() {
     var unexplored = [];
     for (i = 0; i < this.children.length; i++)
       if (this.children[i].total_tries === 0)
-        unexplored[unexplored.length] = this.children[i];
+        unexplored.push(this.children[i]);
 
     if (unexplored.length > 0)
       unexplored[parseInt(Math.random() * unexplored.length)].run_simulation();
