@@ -39,15 +39,8 @@ MCTS_Node.prototype.choose_child = function() {
       if (this.children[i].total_tries === 0)
         unexplored.push(this.children[i]);
 
-    if (unexplored.length > 0) {
-      try {
-        var ran = Math.random() * unexplored.length;
-        var int = parseInt(ran);
-        unexplored[int].run_simulation();
-      } catch (e) {
-        console.log(ran, unexplored, unexplored.length);
-      }
-    }
+    if (unexplored.length > 0)
+      unexplored[Math.floor(Math.random() * unexplored.length)].run_simulation();
     else {
       var best_child, best_potential = -1, potential;
       for (i = 0; i < this.children.length; i++) {
