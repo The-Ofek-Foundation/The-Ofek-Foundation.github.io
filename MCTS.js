@@ -4,12 +4,13 @@ var State = function(board, turn) {
 };
 
 
-var MCTS_Node = function(State, parent, last_move, simulate, get_children) {
+var MCTS_Node = function(State, parent, last_move, simulate, get_children, expansion_constant) {
   this.State = State;
   this.parent = parent;
   this.last_move = last_move;
   this.simulate = simulate;
   this.get_children = get_children;
+  this.expansion_constant = expansion_constant;
   this.hits = 0;
   this.misses = 0;
   this.total_tries = 0;
@@ -21,7 +22,7 @@ MCTS_Node.prototype.child_potential = function(child) {
     w = child.hits;
   else w = child.misses;
   var n = child.total_tries;
-  var c = Math.sqrt(2);
+  var c = this.expansion_constant;
   var t = this.total_tries;
   
   return w / n  +  c * Math.sqrt(Math.log(t) / n);
