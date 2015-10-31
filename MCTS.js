@@ -3,8 +3,6 @@ var State = function(board, turn) {
   this.turn = turn;
 };
 
-
-
 var MCTS_Node = function(State, parent, last_move, simulate, get_children) {
   this.State = State;
   this.parent = parent;
@@ -31,9 +29,8 @@ MCTS_Node.prototype.child_potential = function(child) {
 MCTS_Node.prototype.choose_child = function() {
   if (!this.children)
     this.children = this.get_children(this.State, this);
-  if (this.children.length === 0) { // leaf node
+  if (this.children.length === 0) // leaf node
     this.run_simulation();
-  }
   else {
     var i;
     var unexplored = [];
@@ -41,8 +38,14 @@ MCTS_Node.prototype.choose_child = function() {
       if (this.children[i].total_tries === 0)
         unexplored.push(this.children[i]);
 
-    if (unexplored.length > 0)
-      unexplored[parseInt(Math.random() * unexplored.length)].run_simulation();
+    if (unexplored.length > 0) {
+      try {
+        var ran = parseInt(Math.random() * unexplored.length);
+        unexplored[ran].run_simulation();
+      } catch (e) {
+        console.log(ran, unexplored);
+      }
+    }
     else {
       var best_child, best_potential = -1, potential;
       for (i = 0; i < this.children.length; i++) {
