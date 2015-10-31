@@ -28,7 +28,7 @@ MCTS_Node.prototype.child_potential = function(child) {
 MCTS_Node.prototype.choose_child = function() {
   if (!this.children)
     this.children = this.get_children(this.State, this);
-  if (this.children === 0) { // leaf node
+  if (this.children.length === 0) { // leaf node
     this.run_simulation();
   }
   else {
