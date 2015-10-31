@@ -64,6 +64,9 @@ MCTS_Node.prototype.back_propogate = function(simulation) {
   else if (simulation < 0)
     this.misses++;
   this.total_tries++;
-  if (this.parent)
-    this.parent.back_propogate(-simulation);
+  if (this.parent) {
+    if (this.parent.State.turn === this.State.turn)
+      this.parent.back_propogate(simulation);
+    else this.parent.back_propogate(-simulation);
+  }
 };
