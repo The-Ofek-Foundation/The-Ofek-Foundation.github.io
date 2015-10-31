@@ -5,9 +5,10 @@ var State = function(board, turn) {
 
 
 
-var MCTS_Node = function(State, parent, simulate, get_children) {
+var MCTS_Node = function(State, parent, last_move, simulate, get_children) {
   this.State = State;
   this.parent = parent;
+  this.last_move = last_move;
   this.simulate = simulate;
   this.get_children = get_children;
   this.hits = 0;
