@@ -3,6 +3,7 @@ var State = function(board, turn) {
   this.turn = turn;
 };
 
+
 var MCTS_Node = function(State, parent, last_move, simulate, get_children) {
   this.State = State;
   this.parent = parent;
@@ -40,10 +41,11 @@ MCTS_Node.prototype.choose_child = function() {
 
     if (unexplored.length > 0) {
       try {
-        var ran = parseInt(Math.random() * unexplored.length);
-        unexplored[ran].run_simulation();
+        var ran = Math.random() * unexplored.length;
+        var int = parseInt(ran);
+        unexplored[int].run_simulation();
       } catch (e) {
-        console.log(ran, unexplored);
+        console.log(ran, unexplored, unexplored.length);
       }
     }
     else {
