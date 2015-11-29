@@ -19,8 +19,8 @@ var MCTS_Node = function(State, parent, last_move, simulate, get_children, expan
 MCTS_Node.prototype.child_potential = function(child) {
   var w;
   if (child.State.turn === this.State.turn)
-    w = child.hits - child.misses;
-  else w = child.misses - child.hits;
+    w = child.hits;
+  else w = child.misses;
   var n = child.total_tries;
   var c = this.expansion_constant;
   var t = this.total_tries;
