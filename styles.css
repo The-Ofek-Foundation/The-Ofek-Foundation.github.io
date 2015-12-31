@@ -1,0 +1,59 @@
+html {
+  margin: 0px;
+}
+body {
+  font-family: 'Old Standard TT', serif;
+  font-size: 1.32em;
+  font-weight: 400;
+}
+.dropdown {
+  margin-top: -500px;
+}
+.projects {
+  text-align: center;
+  border: 3px solid black;
+  border-radius: 30px;
+  width: 80%;
+  margin: auto;
+  opacity: 0;
+  margin-top: -10px;
+  margin-bottom: 60px;
+}
+.projects#games {
+  background-color: #FF7216;
+}
+.projects#tools {
+  background-color: #00FF00;
+}
+.projects img {
+  display: inline-block;
+  width: 30%;
+  height: 50px;
+  margin: 40px;
+}
+a {
+  text-decoration: none;
+  font-weight: 400;
+}
+.header,
+.footer {
+  position: fixed;
+  left: 0px;
+  width: 100%;
+  height: auto;
+  padding: 5px 30px;
+  font-weight: 700;
+}
+.header {
+  top: 0px;
+}
+.footer {
+  background-color: yellow;
+  bottom: 0px;
+}
+.footer a {
+  border: 1px solid;
+  padding: 0px 5px;
+  padding-bottom: 1px;
+  border-radius: 5px;
+}
