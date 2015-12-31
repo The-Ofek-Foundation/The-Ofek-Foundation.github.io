@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>https://the-ofek-foundation.github.io/</loc>
+  <lastmod>2015-12-31T23:02:33+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://the-ofek-foundation.github.io/blog/</loc>
+  <lastmod>2015-12-31T23:11:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-ofek-foundation.github.io/ConnectOfek/</loc>
+  <lastmod>2015-12-30T22:34:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-ofek-foundation.github.io/Online-Go/</loc>
+  <lastmod>2015-10-08T01:42:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-ofek-foundation.github.io/Mancala/</loc>
+  <lastmod>2015-11-20T21:53:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-ofek-foundation.github.io/UltimateTicTacToe/</loc>
+  <lastmod>2015-12-27T06:59:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-ofek-foundation.github.io/Lame-Duck/</loc>
+  <lastmod>2015-09-30T01:21:27+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-ofek-foundation.github.io/PrimeFactorizer/</loc>
+  <lastmod>2015-11-22T23:57:30+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-ofek-foundation.github.io/Image-Editor/</loc>
+  <lastmod>2015-12-31T23:20:43+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-ofek-foundation.github.io/Grapher/</loc>
+  <lastmod>2015-11-09T02:15:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-ofek-foundation.github.io/Happy-Numbers/</loc>
+  <lastmod>2015-09-30T01:30:18+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://the-ofek-foundation.github.io/blog/about/</loc>
+  <lastmod>2015-12-31T23:11:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-ofek-foundation.github.io/blog/artificial%20intelligence/2015/12/18/minimax-improvements.html</loc>
+  <lastmod>2015-12-31T23:11:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-ofek-foundation.github.io/blog/artificial%20intelligence/2015/12/11/minimax-for-gomoku-connect-five.html</loc>
+  <lastmod>2015-12-31T23:11:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-ofek-foundation.github.io/blog/artificial%20intelligence/2015/12/10/tic-tac-toe-ai-with-depth-first-search.html</loc>
+  <lastmod>2015-12-31T23:11:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-ofek-foundation.github.io/blog/random%20stuff/2015/12/18/my-quotes.html</loc>
+  <lastmod>2015-12-31T23:11:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-ofek-foundation.github.io/blog/general%20computer%20programming/2015/12/30/2d-array-copy-speeds.html</loc>
+  <lastmod>2015-12-31T23:11:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://the-ofek-foundation.github.io/blog/kesav-viswanadha-tic-tac-toe/</loc>
+  <lastmod>2015-12-31T23:11:08+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+</urlset>
