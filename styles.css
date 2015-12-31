@@ -50,6 +50,7 @@ a {
 .footer {
   background-color: yellow;
   bottom: 0px;
+  border-top: 1px solid black;
 }
 .footer a {
   border: 1px solid;
