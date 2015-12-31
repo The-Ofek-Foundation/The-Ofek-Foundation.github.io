@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('body').css('margin-bottom', $('.footer').outerHeight(true) + "px");
+  $('body').css('margin-bottom', 2 * $('.footer').outerHeight(true) + "px");
   $('.dropdown').css('margin-top', "-" + $('.dropdown').outerHeight(false) + "px");
   $('.projects img').each(function() {
     $(this).css('height', $(this).outerWidth(false) + "px");
