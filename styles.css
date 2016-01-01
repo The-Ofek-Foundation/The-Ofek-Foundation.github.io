@@ -58,9 +58,27 @@ body {
 .info img {
   width: 70%;
 }
+@keyframes background-yellow-highlight {
+  to {
+    background-color: rgba(255, 255, 0, 0.6);
+  }
+}
+img[onclick]:hover {
+  /*   -webkit-box-shadow: 0px 0px 150px 19px rgba(255,255,0,0.5);
+  -moz-box-shadow: 0px 0px 150px 19px rgba(255,255,0,0.5);
+  box-shadow: 0px 0px 150px 19px rgba(255,255,0,0.5); */
+  cursor: pointer;
+}
 a {
   text-decoration: none;
   font-weight: 400;
+  padding-left: 4px;
+  padding-right: 4px;
+  border-radius: 5px;
+}
+a:hover {
+  animation-name: background-yellow-highlight;
+  animation-duration: 2s;
 }
 .header,
 .footer {
