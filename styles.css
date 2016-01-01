@@ -72,7 +72,7 @@ a {
 }
 .header {
   top: 0px;
-  right: 0px;
+  right: -1000px;
   text-align: right;
   padding: 10px;
   padding-bottom: 2px;
