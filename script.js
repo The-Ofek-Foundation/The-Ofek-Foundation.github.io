@@ -9,7 +9,10 @@ $(document).ready(function() {
     $('body').css('margin-top', $('.dropdown').outerHeight(true) + "px");
     $('.dropright').animate({left: $('.dropdown').outerWidth(true) + "px", opacity: 1}, 1000, function() {
       after = true;
-      $('#games').animate({opacity: 1, 'margin-top': "0px"}, 1000);
+      $('.header').css('right', "-" + $('.header').outerWidth(true) + "px");
+      $('#games').animate({opacity: 1, 'margin-top': "0px"}, 1000, function() {
+        $('.header').animate({right: "0px"}, 1000);
+      });
       $(document).scroll();
     });
   });
@@ -28,15 +31,16 @@ $(document).scroll(function() {
       $('#about').css('height', 'auto');
       $('#about').data('animated', true);
     }
-    if (window_at($('#contact-me')) && !$('#contact-me').data('animated')) {
-      $('#contact-me').animate({opacity: 1, 'margin-left': "+=25px"}, 1000);
-      $('#contact-me').css('height', 'auto');
-      $('#contact-me').data('animated', true);
-    }
+//     if (window_at($('#contact-me')) && !$('#contact-me').data('animated')) {
+//       $('#contact-me').animate({opacity: 1, 'margin-left': "+=25px"}, 1000);
+//       $('#contact-me').css('height', 'auto');
+//       $('#contact-me').data('animated', true);
+//     }
   }
 });
 
 function window_at(elem) {
+  console.log(elem);
   return $(document).scrollTop() + $(window).height() - $('.footer').outerHeight(true) >= elem.position().top;
 }
 
