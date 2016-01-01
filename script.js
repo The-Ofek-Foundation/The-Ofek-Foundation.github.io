@@ -40,7 +40,6 @@ $(document).scroll(function() {
 });
 
 function window_at(elem) {
-  console.log(elem);
   return $(document).scrollTop() + $(window).height() - $('.footer').outerHeight(true) >= elem.position().top;
 }
 
@@ -49,3 +48,7 @@ $(window).on('beforeunload', function() {
   $('*').hide();
   $(window).scrollTop(0);
 });
+
+function redirect(url) {
+  window.location.href = url;
+}
