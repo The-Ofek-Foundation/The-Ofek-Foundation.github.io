@@ -101,21 +101,17 @@ body {
 .info img {
   width: 70%;
 }
-@keyframes background-yellow-highlight {
-  to {
-    background-color: rgba(255, 255, 0, 0.6);
-  }
-}
 a {
   text-decoration: none;
   font-weight: 400;
   padding-left: 4px;
   padding-right: 4px;
   border-radius: 5px;
+  transition: background-color 1.5s ease-out;
 }
 a:hover {
-  animation-name: background-yellow-highlight;
-  animation-duration: 2s;
+  background-color: rgba(255, 255, 0, 0.6);
+  transition: background-color 2s ease-out;
 }
 .header,
 .footer {
