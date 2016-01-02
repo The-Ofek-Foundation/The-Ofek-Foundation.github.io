@@ -9,7 +9,7 @@ $(document).ready(function() {
     while($(this).height() > $(this).parent().height()) {
         $(this).css('font-size', (parseInt($(this).css('font-size')) - 1) + "px" );
     }
-    $(this).css('margin-top', ($(this).parent().outerHeight(false) - $(this).outerHeight(false)) / 2 + "px");
+    $(this).css('margin-top', ($(this).parent().height() - $(this).height()) / 2 + "px");
   });
   $('.link').click(function() {
     redirect($(this).data('url'));
