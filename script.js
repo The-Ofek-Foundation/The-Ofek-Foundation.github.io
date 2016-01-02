@@ -2,8 +2,22 @@ $(document).ready(function() {
   $('body').css('margin-bottom', 2 * $('.footer').outerHeight(true) + "px");
   $('.dropdown').css('top', "-" + $('.dropdown').outerHeight(false) + "px");
   $('.info').css('margin-left', "-=25px").css('padding-left', "+=20px").css('padding-right', "+=20px").css('width', "-=40px");
-  $('.projects img, .info, img').each(function() {
+  $('.projects img, .info, img, .projects .container').each(function() {
     $(this).css('height', $(this).outerWidth(false) + "px");
+  });
+  $('.vert-align').each(function() {
+    while($(this).height() > $(this).parent().height()) {
+        $(this).css('font-size', (parseInt($(this).css('font-size')) - 1) + "px" );
+    }
+    $(this).css('margin-top', ($(this).parent().outerHeight(false) - $(this).outerHeight(false)) / 2 + "px");
+  });
+  $('.link').click(function() {
+    redirect($(this).data('url'));
+  });
+  $('.container').each(function() {
+    $(this).hover(function() {
+      $(this).children(".flippable").toggleClass("flipped");
+    });
   });
   $('.dropdown').animate({'top': "0px"}, "slow", function() {
     $('body').css('margin-top', $('.dropdown').outerHeight(true) + "px");
