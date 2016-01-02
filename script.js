@@ -5,12 +5,6 @@ $(document).ready(function() {
   $('.projects img, .info, img, .projects .container').each(function() {
     $(this).css('height', $(this).outerWidth(false) + "px");
   });
-  $('.vert-align').each(function() {
-    while($(this).height() > $(this).parent().height()) {
-        $(this).css('font-size', (parseInt($(this).css('font-size')) - 1) + "px" );
-    }
-    $(this).css('margin-top', ($(this).parent().height() - $(this).height()) / 2 + "px");
-  });
   $('.link').click(function() {
     redirect($(this).data('url'));
   });
@@ -23,6 +17,8 @@ $(document).ready(function() {
     $('body').css('margin-top', $('.dropdown').height() + "px");
     $('.dropright').animate({left: $('.dropdown').outerWidth(true) + "px", opacity: 1}, 1000, function() {
       after = true;
+      fit_parent();
+      vert_align();
       $('.header').css('right', "-" + $('.header').outerWidth(true) + "px");
       $('#games').animate({opacity: 1, 'margin-top': "0px"}, 1000, function() {
         $('.header').animate({right: "0px"}, 1000);
@@ -31,6 +27,20 @@ $(document).ready(function() {
     });
   });
 });
+
+function fit_parent() {
+  $('.fit-parent').each(function() {
+    while($(this).height() > $(this).parent().height())
+        $(this).css('font-size', (parseInt($(this).css('font-size')) - 1) + "px" );
+  });
+  
+}
+
+function vert_align() {
+  $('.vert-align').each(function() {
+    $(this).css('margin-top', ($(this).parent().height() - $(this).height()) / 2 + "px");
+  });
+}
 
 // Animate tools when scrolled to them
 var after = false;
