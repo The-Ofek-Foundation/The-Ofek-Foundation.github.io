@@ -5,6 +5,9 @@ $(document).ready(function() {
   $('.projects img, .info, img, .projects .container').each(function() {
     $(this).css('height', $(this).outerWidth(false) + "px");
   });
+  $('.link').each(function() {
+    $("#links").append($('<a href="' + $(this).data("url") + '"></a>'));
+  });
   $('.link').click(function() {
     redirect($(this).data('url'));
   });
