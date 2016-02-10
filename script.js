@@ -32,7 +32,7 @@ $(document).ready(function() {
       prev_container = prev_dp = target;
     }
   };
-  $('body').css('margin-top', $('.dropdown').height() + "px");
+  $('body').css('margin-top', ($('.dropdown').height() + 10) + "px");
 });
 
 function indexOf(list, item) {
@@ -47,7 +47,7 @@ $(".dropright").on("transitionend", function() {
     after = true;
     fit_parent();
     vert_align();
-    $('#games').animate({opacity: 1, 'margin-top': "0px"}, 1000, function() {
+    $('#games').animate({opacity: 1}, 1000, function() {
       $('.header').css('right', "-" + $('.header').outerWidth(true) + "px");
       $('.header').animate({right: "0px"}, 1000);
     });
