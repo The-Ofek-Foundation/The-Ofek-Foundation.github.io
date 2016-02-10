@@ -1,48 +1,77 @@
 $(document).ready(function() {
   $('body').css('margin-bottom', 2 * $('.footer').height() + "px");
-  $('.dropdown').css('top', "-" + $('.dropdown').height() + "px");
+  $('.dropdown').css({'top': "-" + $('.dropdown').height() + "px", 'margin-top': $('.dropdown').height() + "px"});
+  $('.dropright').css({left: $('.dropdown').outerWidth(true) + "px", opacity: 1});
+  
   $('.info').css('margin-left', "-=25px").css('padding-left', "+=20px").css('padding-right', "+=20px").css('width', "-=40px");
-  $('.projects img, .info, img, .projects .container').each(function() {
-    $(this).css('height', $(this).outerWidth(false) + "px");
-  });
-  $('.link').each(function() {
-    $("#links").append($('<a href="' + $(this).data("url") + '"></a>'));
-  });
-  $('.link').click(function() {
-    redirect($(this).data('url'));
-  });
-  $('.container').each(function() {
-    $(this).hover(function() {
-      $(this).children(".flippable").toggleClass("flipped");
-    });
-  });
-  $('.dropdown').animate({'top': "0px"}, "slow", function() {
-    $('body').css('margin-top', $('.dropdown').height() + "px");
-    $('.dropright').animate({left: $('.dropdown').outerWidth(true) + "px", opacity: 1}, 1000, function() {
-      after = true;
-      fit_parent();
-      vert_align();
-      $('.header').css('right', "-" + $('.header').outerWidth(true) + "px");
-      $('#games').animate({opacity: 1, 'margin-top': "0px"}, 1000, function() {
-        $('.header').animate({right: "0px"}, 1000);
-      });
-      $(document).scroll();
-    });
-  });
+  
+  var squares = document.getElementsByClassName("square");
+  for (var i = 0; i < squares.length; i++)
+    $(squares[i]).css('height', $(squares[i]).outerWidth(false) + "px");
+    
+//   $('.link').each(function() {
+//     $("#links").append($('<a href="' + $(this).data("url") + '"></a>'));
+//   });
+
+  var prev_container = false, prev_dp = false;
+  document.onmousemove = function (e) {
+    var target = e.target;
+    if (!target.parentElement)
+      return;
+    var doub_par = target.parentElement.parentElement;
+    if (doub_par === prev_dp || (target.tagName === "SECTION"));
+    else if (target.parentElement.tagName === "FIGURE") {
+      var tp = target.parentElement.parentElement.parentElement;
+      $(prev_container).children(".flippable").removeClass("flipped");
+      prev_container = tp;
+      prev_dp = doub_par;
+      $(prev_container).children(".flippable").addClass("flipped");
+    }
+    else if (target.tagName === "DIV") {
+      $(prev_container).children(".flippable").removeClass("flipped");
+      prev_container = prev_dp = target;
+    }
+  };
+  $('body').css('margin-top', $('.dropdown').height() + "px");
 });
 
-function fit_parent() {
-  $('.fit-parent').each(function() {
-    while($(this).height() > $(this).parent().height())
-        $(this).css('font-size', (parseInt($(this).css('font-size')) - 1) + "px" );
-  });
-  
+function indexOf(list, item) {
+  for (var i = 0; i < list.length; i++)
+    if (list[i] === item)
+      return i;
+  return -1;
 }
 
+$(".dropright").on("transitionend", function() {
+  if (!after) {
+    after = true;
+    fit_parent();
+    vert_align();
+    $('#games').animate({opacity: 1, 'margin-top': "0px"}, 1000, function() {
+      $('.header').css('right', "-" + $('.header').outerWidth(true) + "px");
+      $('.header').animate({right: "0px"}, 1000);
+    });
+    $(document).scroll();
+  }
+});
+
+var fit_parents = document.getElementsByClassName("fit-parent");
+function fit_parent() {
+  var fp = fit_parents, elem;
+  for (var i = 0; i < fp.length; i++) {
+    elem = $(fp[i]);
+    while (elem.height() > elem.parent().height())
+        elem.css('font-size', (parseInt(elem.css('font-size')) - 1) + "px" );
+  }
+}
+
+var vert_aligns = document.getElementsByClassName("vert-align");
 function vert_align() {
-  $('.vert-align').each(function() {
-    $(this).css('margin-top', ($(this).parent().height() - $(this).height()) / 2 + "px");
-  });
+  var va = vert_aligns, elem;
+  for (var i = 0; i < va.length; i++) {
+    elem = $(va[i]);
+    elem.css('margin-top', (elem.parent().height() - elem.height()) / 2 + "px");
+  }
 }
 
 // Animate tools when scrolled to them
