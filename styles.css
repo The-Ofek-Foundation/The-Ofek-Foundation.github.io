@@ -10,6 +10,8 @@ body {
   margin-right: 50px;
   position: absolute;
   top: -500px;
+  -webkit-transition: margin-top 1s;
+  transition: margin-top 1s;
 }
 .dropright {
   background-color: lightblue;
@@ -19,6 +21,13 @@ body {
   opacity: 0;
   position: absolute;
   top: 0px;
+  left: 0px;
+  transition-property: left, opacity;
+  transition-duration: 1s;
+  transition-delay: 1s;
+  -webkit-transition-property: left, opacity;
+  -webkit-transition-duration: 1s;
+  -webkit-transition-delay: 1s;
 }
 .dropright h2 {
   font-weight: 400;
@@ -126,7 +135,7 @@ a:hover {
   height: auto;
   padding-bottom: 2px;
   padding: 10px;
-  padding: 5px 30px;
+  padding: 5px 20px;
   position: fixed;
   right: -1000px;
   text-align: right;
