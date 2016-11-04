@@ -1,3 +1,6 @@
+// Redirect to new website
+window.location.href = "https://www.theofekfoundation.org/";
+
 $(document).ready(function() {
   $('body').css('margin-bottom', 2 * $('.footer').height() + "px");
   $('.dropdown').css({'top': "-" + $('.dropdown').height() + "px", 'margin-top': $('.dropdown').height() + "px"});
